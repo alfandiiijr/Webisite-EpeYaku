@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="EpeYaku - Wadah aspirasi masyarakat Sulawesi Tengah"
+    />
+    <title>EpeYaku - Dengar Aku | Wadah Aspirasi Masyarakat</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg shadow-sm sticky-top"
+      style="background-color: #0d47a1"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand d-flex align-items-center text-white"
+          href="index.html"
+        >
+          <img
+            src="images/logo.png"
+            alt="Logo EpeYaku"
+            height="40"
+            class="rounded-circle me-2"
+          />
+          <span class="fw-semibold">EpeYaku</span>
+        </a>
+        <button
+          class="navbar-toggler bg-white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white active" href="index.html"
+                ><i class="fas fa-home me-1"></i> Beranda</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="aspirasi.html"
+                ><i class="fas fa-paper-plane me-1"></i> Kirim Aspirasi</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="faq.html"
+                ><i class="fas fa-question-circle me-1"></i> FAQ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="login.html"
+                ><i class="fas fa-sign-in-alt me-1"></i> Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-white btn btn-outline-light ms-2"
+                href="register.html"
+                ><i class="fas fa-user-plus me-1"></i> Daftar</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-3 fw-bold text-white mb-4">EpeYaku</h1>
+            <p class="lead text-white mb-5">
+              "Dengar Aku" - Wadah Aspirasi Digital Masyarakat Sulawesi Tengah
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <a href="aspirasi.html" class="btn btn-primary btn-lg px-4 py-3">
+                <i class="fas fa-paper-plane me-2"></i>Kirim Aspirasi
+              </a>
+              <a href="#tentang" class="btn btn-outline-light btn-lg px-4 py-3">
+                <i class="fas fa-info-circle me-2"></i>Pelajari Lebih Lanjut
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Statistik Cepat -->
+    <section class="py-4 bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center py-4">
+                <h3 class="text-primary mb-0">1,250+</h3>
+                <p class="mb-0">Aspirasi Terkirim</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center py-4">
+                <h3 class="text-primary mb-0">950+</h3>
+                <p class="mb-0">Aspirasi Diproses</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center py-4">
+                <h3 class="text-primary mb-0">750+</h3>
+                <p class="mb-0">Aspirasi Ditanggapi</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center py-4">
+                <h3 class="text-primary mb-0">15+</h3>
+                <p class="mb-0">Instansi Terkait</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang Section -->
+    <section id="tentang" class="py-5 bg-white">
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="fw-bold mb-4">Apa Itu EpeYaku?</h2>
+            <p class="lead text-primary">
+              EpeYaku berasal dari bahasa Kaili yang berarti "Dengar Aku".
+            </p>
+            <p>
+              Platform ini dibangun sebagai wadah digital bagi masyarakat
+              Sulawesi Tengah untuk menyampaikan aspirasi, keluhan, dan saran
+              kepada pemerintah daerah secara langsung dan transparan.
+            </p>
+            <p>
+              Dengan EpeYaku, setiap suara masyarakat akan didengar dan
+              mendapatkan respon yang cepat dari pihak terkait.
+            </p>
+            <div class="mt-4">
+              <a href="tentang.html" class="btn btn-outline-primary"
+                >Selengkapnya</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ratio ratio-16x9">
+              <iframe
+                class="rounded shadow"
+                src="https://www.youtube.com/embed/BHtqJgk2p40?si=-NdZNC4PLtY2oWAe"
+                title="Tentang EpeYaku"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fitur Section -->
+    <section id="fitur" class="py-5 bg-light">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">Fitur Unggulan EpeYaku</h2>
+          <p class="text-muted">
+            Platform yang dirancang untuk memudahkan penyampaian aspirasi
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="icon-wrapper bg-primary mb-4">
+                  <i class="fas fa-edit text-white"></i>
+                </div>
+                <h3 class="h4 mb-3">Kirim Aspirasi</h3>
+                <p>
+                  Formulir online yang mudah digunakan untuk mengirimkan
+                  aspirasi, keluhan, atau saran Anda kepada pemerintah.
+                </p>
+                <a
+                  href="aspirasi.html"
+                  class="btn btn-sm btn-outline-primary mt-3"
+                  >Coba Sekarang</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="icon-wrapper bg-primary mb-4">
+                  <i class="fas fa-history text-white"></i>
+                </div>
+                <h3 class="h4 mb-3">Lacak Status</h3>
+                <p>
+                  Pantau perkembangan laporan Anda melalui dashboard pribadi
+                  dengan informasi status yang transparan.
+                </p>
+                <a href="login.html" class="btn btn-sm btn-outline-primary mt-3"
+                  >Lihat Dashboard</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="icon-wrapper bg-primary mb-4">
+                  <i class="fas fa-bullhorn text-white"></i>
+                </div>
+                <h3 class="h4 mb-3">Aspirasi Publik</h3>
+                <p>
+                  Lihat aspirasi masyarakat lainnya dan dukung aspirasi yang
+                  menurut Anda penting untuk segera ditangani.
+                </p>
+                <a
+                  href="aspirasi_publik.html"
+                  class="btn btn-sm btn-outline-primary mt-3"
+                  >Lihat Aspirasi</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section class="py-5 bg-white">
+      <div class="container py-5">
+        <h2 class="text-center fw-bold mb-5">Apa Kata Mereka?</h2>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div
+              id="testimoniCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="card border-0 shadow-sm">
+                    <div class="card-body text-center p-5">
+                      <img
+                        src="images/testimoni.png"
+                        alt="Testimoni"
+                        class="rounded-circle mb-4"
+                        width="100"
+                      />
+                      <p class="lead mb-4">
+                        "Melalui EpeYaku, keluhan kami tentang jalan rusak di
+                        desa langsung ditanggapi dan diperbaiki dalam waktu 2
+                        minggu. Terima kasih EpeYaku!"
+                      </p>
+                      <h5 class="mb-1">Dede Al Fandi</h5>
+                      <p class="text-muted">Warga Palu</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card border-0 shadow-sm">
+                    <div class="card-body text-center p-5">
+                      <img
+                        src="images/testimoni.png"
+                        alt="Testimoni"
+                        class="rounded-circle mb-4"
+                        width="100"
+                      />
+                      <p class="lead mb-4">
+                        "Sistem yang transparan, saya bisa melihat perkembangan
+                        aspirasi yang saya kirimkan. Sangat membantu!"
+                      </p>
+                      <h5 class="mb-1">Yuda</h5>
+                      <p class="text-muted">Warga Lambunu</p>
+                    </div
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#testimoniCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#testimoniCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+      <div class="container text-center py-5">
+        <h2 class="fw-bold mb-4">Sampaikan Aspirasi Anda Sekarang!</h2>
+        <p class="lead mb-5">
+          Bersama EpeYaku, suara Anda akan didengar oleh pemerintah daerah
+          Sulawesi Tengah.
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="aspirasi.html" class="btn btn-light btn-lg px-4 py-3">
+            <i class="fas fa-paper-plane me-2"></i>Kirim Aspirasi
+          </a>
+          <a
+            href="register.html"
+            class="btn btn-outline-light btn-lg px-4 py-3"
+          >
+            <i class="fas fa-user-plus me-2"></i>Daftar Sekarang
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h5 class="fw-bold mb-3">EpeYaku</h5>
+            <p>
+              "Dengar Aku" - Wadah Aspirasi Digital Masyarakat Sulawesi Tengah
+            </p>
+            <div class="social-icons mt-4">
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5 class="fw-bold mb-3">Tautan</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="index.html" class="text-white text-decoration-none"
+                  >Beranda</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="aspirasi.html" class="text-white text-decoration-none"
+                  >Kirim Aspirasi</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="faq.html" class="text-white text-decoration-none"
+                  >FAQ</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="tentang.html" class="text-white text-decoration-none"
+                  >Tentang Kami</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+            <h5 class="fw-bold mb-3">Kebijakan</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="privacy.html" class="text-white text-decoration-none"
+                  >Kebijakan Privasi</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="terms.html" class="text-white text-decoration-none"
+                  >Syarat & Ketentuan</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="disclaimer.html"
+                  class="text-white text-decoration-none"
+                  >Disclaimer</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <h5 class="fw-bold mb-3">Kontak Kami</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-envelope me-2"></i> info@epeyaku.id
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone me-2"></i> (0451) 123456
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i> Jl. Monginsidi No.
+                12, Palu
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy; 2025 EpeYaku. Hak cipta dilindungi.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <p class="mb-0">
+              Dikembangkan oleh
+              <a href="#" class="text-white text-decoration-none"
+                >Tim EpeYaku</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

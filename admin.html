@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EpeYaku - Admin Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <div
+          class="col-md-3 col-lg-2 d-md-block sidebar bg-primary text-white p-0"
+        >
+          <div class="text-center py-4">
+            <img
+              src="images/logo.png"
+              alt="Logo"
+              width="50"
+              class="rounded-circle"
+            />
+            <h5 class="mt-2 mb-0">Admin Panel</h5>
+            <small class="text-white-50">EpeYaku v2.0</small>
+          </div>
+          <ul class="nav flex-column nav-pills">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="dashboard.html"
+                ><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-dark" href="admin.html"
+                ><i class="fas fa-inbox me-2"></i>Kelola Aspirasi</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="kategori.html"
+                ><i class="fas fa-tags me-2"></i>Kategori</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="pengguna.html"
+                ><i class="fas fa-users me-2"></i>Pengguna</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="laporan.html"
+                ><i class="fas fa-chart-bar me-2"></i>Laporan</a
+              >
+            </li>
+            <li class="nav-item mt-3">
+              <a class="nav-link text-white" href="index.html"
+                ><i class="fas fa-sign-out-alt me-2"></i>Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Main Content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2"><i class="fas fa-inbox me-2"></i>Kelola Aspirasi</h1>
+          </div>
+          <!-- DataTable Aspirasi -->
+          <div class="card">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  id="aspirasiTable"
+                  class="table table-hover table-striped"
+                >
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Judul</th>
+                      <th>Pengirim</th>
+                      <th>Kategori</th>
+                      <th>Tanggal</th>
+                      <th>Status</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Data akan diisi otomatis via AJAX -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Konfirmasi Hapus -->
+          <div
+            class="modal fade"
+            id="confirmDeleteModal"
+            tabindex="-1"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Konfirmasi Hapus</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  Apakah Anda yakin ingin menghapus data ini?
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    Batal
+                  </button>
+                  <button class="btn btn-danger" id="btnConfirmDelete">
+                    Hapus
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Feedback -->
+          <div class="modal fade" id="globalModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title"></h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                  ></button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-dismiss="modal">
+                    OK
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Load DataTables dengan AJAX dari backend
+        var table = $("#aspirasiTable").DataTable({
+          ajax: "api/aspirasi/list.php",
+          columns: [
+            { data: "id_aspirasi" },
+            { data: "judul" },
+            { data: "pengirim" },
+            {
+              data: "kategori",
+              render: (d) => `<span class="badge bg-info">${d}</span>`,
+            },
+            { data: "tanggal" },
+            {
+              data: "status",
+              render: function (status, type, row) {
+                // Render status badge + dropdown select untuk interaktif
+                let badge = "secondary";
+                if (status === "Diproses") badge = "warning";
+                if (status === "Ditanggapi") badge = "success";
+                if (status === "Selesai") badge = "info";
+                if (status === "Ditolak") badge = "danger";
+                return `<div class="status-editable">
+            <span class="badge bg-${badge} status-badge">${status}</span>
+            <select class="form-select form-select-sm status-select" style="display:none;">
+              <option value="Terkirim" data-badge="secondary"${
+                status === "Terkirim" ? " selected" : ""
+              }>Terkirim</option>
+              <option value="Diproses" data-badge="warning"${
+                status === "Diproses" ? " selected" : ""
+              }>Diproses</option>
+              <option value="Ditanggapi" data-badge="success"${
+                status === "Ditanggapi" ? " selected" : ""
+              }>Ditanggapi</option>
+              <option value="Selesai" data-badge="info"${
+                status === "Selesai" ? " selected" : ""
+              }>Selesai</option>
+              <option value="Ditolak" data-badge="danger"${
+                status === "Ditolak" ? " selected" : ""
+              }>Ditolak</option>
+            </select>
+            <button class="btn btn-xs btn-light btn-edit-status" type="button" data-bs-toggle="tooltip" title="Edit Status">
+              <i class="fas fa-pen"></i>
+            </button>
+          </div>`;
+              },
+            },
+            {
+              data: null,
+              orderable: false,
+              render: function (data, type, row) {
+                return `
+          <button class="btn btn-sm btn-outline-primary me-1 btn-detail" data-id="${row.id_aspirasi}" data-bs-toggle="tooltip" title="Detail"><i class="fas fa-eye"></i></button>
+          <button class="btn btn-sm btn-outline-danger btn-delete" data-id="${row.id_aspirasi}" data-bs-toggle="tooltip" title="Hapus"><i class="fas fa-trash"></i></button>
+          `;
+              },
+            },
+          ],
+          createdRow: function (row, data) {
+            $(row).attr("data-id", data.id_aspirasi);
+          },
+        });
+
+        // Delegasi status interaktif, hapus, dst via script.js
+      });
+    </script>
+  </body>
+</html>
